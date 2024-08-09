@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: rgb(252, 251, 249);
 }
 
 .brand {
@@ -93,12 +93,14 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #dbacb3;
+    color: #445261;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #dbacb3
+
+    ;
 }
 
 .post-title {
@@ -108,7 +110,7 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: whitesmoke;
+    color: white;
 }
 
 .btn-signup,
