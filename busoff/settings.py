@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # 'django-insecure-kmrr3-1^w6&+i*@a+$40rir$yv8(t%g+g+s@()1fbegxai7lss'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','.herokuapp.com']
 
@@ -140,4 +140,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_DIR = BASE_DIR / 'media-dir'
+MEDIA_ROOT = BASE_DIR / 'media-img'
