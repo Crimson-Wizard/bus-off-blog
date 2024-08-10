@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div>
+    {% if media %}
+    <!-- Display media details here -->
+    <h1>{{ media.title }} {{ media.created_on }}</h1>
+    <p>{{ media.excerpt }}</p>
+    <!-- Other media details -->
+{% else %}
+    <p>No media available.</p>
+{% endif %}
+</div>
+
+
+
+{% endblock %}
