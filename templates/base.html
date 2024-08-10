@@ -1,12 +1,13 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'about' as about_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Bus of with Josie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -28,9 +29,9 @@
 
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light nav-pink">
+    <nav class="navbar navbar-expand-lg navbar-light nav-pink mp-5">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand text-center">Bus Of With Josie</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,14 +42,16 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a
+                            class="nav-link
+                            {% if request.path == about_url %}active{%endif%}"
+                            aria-current="page"
+                            href="{% url 'about' %}"
+                            >About</a>
+                        </li>
                 </ul>
-                <span class="navbar-text text-muted nav-socials">
-                    <i class="fab fa-facebook-square ms-3"></i>
-                    <i class="fab fa-twitter-square ms-3"></i>
-                    <i class="fab fa-instagram-square ms-3"></i>
-                    <i class="fab fa-youtube-square ms-3"></i>
-                </span>
+
             </div>
         </div>
     </nav>
