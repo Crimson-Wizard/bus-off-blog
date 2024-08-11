@@ -6,6 +6,11 @@ from datetime import datetime
 
 class Media(models.Model):
     title = models.CharField(max_length=100)
-    image = models.ImageField("photo")
+    image = models.ImageField(upload_to='media-img/')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(default=datetime.now)
+    
+    class Meta:
+        ordering = ["-created_on"]
+
+
