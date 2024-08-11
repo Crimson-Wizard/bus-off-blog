@@ -74,6 +74,11 @@
                 </ul>
             </div>
         </div>
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Welcome {{ user.username }}</p>
+        {% else %}
+        <p class="text-end m-3">Please log-in or Register</p>
+        {% endif %}
     </nav>
     <main class="flex-shrink-0 main-bg">
         {% block content %}
