@@ -10,7 +10,7 @@ class Media(models.Model):
     # image = models.ImageField(upload_to='media-img/')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(default=datetime.now)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image')
     
     class Meta:
         ordering = ["-created_on"]
