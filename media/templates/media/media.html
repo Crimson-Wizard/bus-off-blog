@@ -12,8 +12,8 @@
             {% for media in media_list %}
             <div class="col-md-6 col-lg-4">
                 <div class="card border-0 transform-on-hover">
-                    <a class="lightbox" href="{{ media.image.url}}">
-                        <img src="{{ media.image.url }}" alt="{{ media.title }}" class="card-img-top">
+                    <a class="lightbox" href="{{ media.featured_image.url}}">
+                        <img src="{{ media.featured_image.url }}" alt="{{ media.title }}" class="card-img-top">
                     </a>
                     <div class="card-body">
                         <h6><a href="#">{{ media.title }}</a></h6>
