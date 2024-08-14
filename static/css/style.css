@@ -37,6 +37,10 @@ body {
     background-color: transparent;
 }
 
+.profile-image{
+    width: 75%;
+}
+
 .image-container {
     position: relative;
 }
