@@ -11,9 +11,15 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
+            {% if "palceholder" in post.featured_image.url %}
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/pondering.jpg' %}" class="scale" alt="placeholder"> 
             </div>
+            {% else %}
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <img src="{{ post.featured_image.url }}" class="scale" alt="placeholder"> 
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
