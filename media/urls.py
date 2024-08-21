@@ -1,8 +1,8 @@
 from . import views
-from .views import MediaListView
+from .views import GalleryListView
 from django.urls import path
 
 urlpatterns = [
-    path('',  MediaListView.as_view(), name='media-list'),
+    path('',  GalleryListView.as_view(), name='gallery-list'),
 ]
 

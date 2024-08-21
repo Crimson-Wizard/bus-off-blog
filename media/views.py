@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Media
+from .models import Gallery
 
 # Create your views here.
 
 
-class MediaListView(ListView):
-    model = Media
-    template_name = 'media/media.html'
-    context_object_name = 'media_list'
+class GalleryListView(ListView):
+    model = Gallery
+    template_name = 'media/gallery.html'
+    context_object_name = 'gallery_list'
 
     def get_queryst(self):
-        return Media.objects.all().order_by('-created_on')
+        return Gallery.objects.all().order_by('-created_on')

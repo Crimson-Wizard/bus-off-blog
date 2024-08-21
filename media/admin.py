@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Media
+from .models import Gallery
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(Media)
+@admin.register(Gallery)
 class AboutAdmin(SummernoteModelAdmin):
     
     list_display = ('title', 'created_on')
