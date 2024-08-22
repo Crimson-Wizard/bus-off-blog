@@ -9,7 +9,6 @@ class Gallery(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(default=datetime.now)
     featured_image = CloudinaryField('image')
-    # featured_video = CloudinaryField('video')
     
     class Meta:
         ordering = ["-created_on"]

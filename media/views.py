@@ -1,9 +1,7 @@
-# from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Gallery
 
 # Create your views here.
-
 
 class GalleryListView(ListView):
     model = Gallery
