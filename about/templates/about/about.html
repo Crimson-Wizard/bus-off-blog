@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <div class="row">
         <div id="about-img" class="col-4 text-center" >
-            <img class="rounded profile-image" src="{% static 'images/about-image.jpeg' %}" alt="Image of josie holding cup">
+            <img class="rounded profile-image img-fluid" src="{% static 'images/about-image.jpeg' %}" alt="Image of josie holding cup">
         </div>
         <div class="col-8">
             <h2>{{ about.title }}</h2>
@@ -19,17 +19,17 @@
         </div>
         </div>
         <h2>Work with me</h2>
-        <form method="post">
+        <form class="form-marg" method="post">
             {{ collaborate_form | crispy }}
             {% csrf_token %}
             <button class="btn btn-secondary"
                 type="submit">Submit</button>
         </form>
 </div>
-<div class="text-center ml-4 mb-4">
-    <img src="{% static 'images/about/about-1.png' %}" class="rounded" alt="...">
-    <img src="{% static 'images/about/about-2.png' %}" class="rounded" alt="...">
-    <img src="{% static 'images/about/about-3.png' %}" class="rounded" alt="...">
-    <img src="{% static 'images/about/about-4.png' %}" class="rounded" alt="...">
+<div class="text-center ml-4 mb-4 mt-4">
+    <img src="{% static 'images/about/about-1.png' %}" class="rounded" alt="Josie lounging in the couch">
+    <img src="{% static 'images/about/about-2.png' %}" class="rounded" alt="Josie and winnie laying on the bed">
+    <img src="{% static 'images/about/about-3.png' %}" class="rounded" alt="Josie on top of the bus">
+    <img src="{% static 'images/about/about-4.png' %}" class="rounded" alt="josie stood infront of open doors on the bus">
 </div>
 {% endblock content %}
