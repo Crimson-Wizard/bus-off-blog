@@ -4,7 +4,8 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Gallery)
-class AboutAdmin(SummernoteModelAdmin):
+# chnage about to gallery
+class GalleryAdmin(SummernoteModelAdmin): 
     
     list_display = ('title', 'created_on')
     search_fields = ['title']
