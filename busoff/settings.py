@@ -16,7 +16,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Debug mode setting
-DEBUG = True
+DEBUG = False
 
 # Allowed hosts for the project
 ALLOWED_HOSTS = [
