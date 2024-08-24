@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import About
 from .forms import CollaborateForm
 
+
 def about_me(request):
     """
     Renders the About page

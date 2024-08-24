@@ -5,5 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
-
+    """
+    About admin configuration
+    """
     summernote_fields = ('content',)

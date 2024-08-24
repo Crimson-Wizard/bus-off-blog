@@ -4,9 +4,10 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Gallery)
-# chnage about to gallery
-class GalleryAdmin(SummernoteModelAdmin): 
-    
+class GalleryAdmin(SummernoteModelAdmin):
+    """
+    Admin interface configuration for the Gallery model.
+    """
     list_display = ('title', 'created_on')
     search_fields = ['title']
     list_filter = ('created_on',)
