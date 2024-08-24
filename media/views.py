@@ -6,7 +6,13 @@ from .models import Gallery
 
 class GalleryListView(ListView):
     """
-    View to list all galleries on the gallery page.
+    View to list all galleries on the gallery page
+    **Context**
+    ``Gallery``
+        the most recent instance of :model:`media.Gallery`.
+    
+    **Template**
+    :template: `media/gallery.html`
     """
     model = Gallery
     template_name = 'media/gallery.html'

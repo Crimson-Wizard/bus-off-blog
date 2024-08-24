@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 class Gallery(models.Model):
     """
     Model representing a gallery with images and descriptions.
+    stores list of images stored on cloudinary 
     """
     title = models.CharField(max_length=100)
     excerpt = models.TextField(blank=True)
