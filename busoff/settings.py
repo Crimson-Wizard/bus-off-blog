@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import sys
 from django.contrib.messages import constants as messages
 import dj_database_url
 # Load environment variables from env.py if it exists
@@ -97,6 +98,8 @@ WSGI_APPLICATION = 'busoff.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 # CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
