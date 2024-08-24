@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from cloudinary.models import CloudinaryField
 from django import forms
-from django.contrib import admin
+# from django.contrib import admin
 
 
 class Gallery(models.Model):
@@ -29,6 +29,15 @@ class GalleryForm(forms.ModelForm):
         fields = '__all__'
         
     def clean_featured_image(self):
+        """
+        Validates that the uploaded file for the featured_image field is an image.
+        
+        Raises:
+            forms.ValidationError: If the uploaded file is not an image.
+        
+        Returns:
+            The cleaned data for the featured_image field if valid.
+        """
         featured_image = self.cleaned_data.get('featured_image')
 
         if featured_image:

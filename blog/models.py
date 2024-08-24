@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django import forms
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -26,6 +28,36 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+class PostForm(forms.ModelForm):
+    """
+    Form for the Post model that validates the uploaded file to ensure
+    that only image files can be used as the featured image.
+
+    Raises:
+        forms.ValidationError: If the uploaded file is not an image.
+    """
+    class Meta:
+        model = Post
+        fields = '__all__'
+
+    def clean_featured_image(self):
+        """
+        Validates that the uploaded file for the featured_image field is an image.
+        
+        Raises:
+            forms.ValidationError: If the uploaded file is not an image.
+        
+        Returns:
+            The cleaned data for the featured_image field if valid.
+        """
+        featured_image = self.cleaned_data.get('featured_image')
+
+        if featured_image:
+            if not featured_image.content_type.startswith('image/'):
+                raise forms.ValidationError("Only image files are allowed.")
+        
+        return featured_image
 
 
 class Comment(models.Model):

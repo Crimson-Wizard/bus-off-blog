@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, PostForm
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -8,6 +8,7 @@ class PostAdmin(SummernoteModelAdmin):
     """
     Post admin configuration
     """
+    form = PostForm
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on',)
