@@ -60,7 +60,7 @@
                         </span> wrote:
                     </p>
                     <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
+                        {{ comment.body|safe|linebreaks  }}
                     </div>
                     {% if not comment.approved and comment.author == user %}
                     <p class="approval">This comment is awaiting approval</p>
