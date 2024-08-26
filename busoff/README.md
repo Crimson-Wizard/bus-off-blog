@@ -245,17 +245,112 @@ The footer of the website is designed to provide essential information and quick
 The footer serves as a functional and unobtrusive part of the site, providing important information and additional navigation options without detracting from the main content. It ensures that users can always find their way to Josie’s external media sites and that her content is legally protected with appropriate copyright notices.
 
 
-## Admin 
+## Admin
+
+For the administrative side of the website, I utilized Django's robust admin interface, enhanced with Django Summernote, to streamline content management and moderation.
+
+**Key Features:**
+
+- Content Creation and Editing:
+
+    - Django Summernote Integration: The admin interface is enriched with Django Summernote, a powerful WYSIWYG editor that allows for seamless content creation and editing. This tool enables administrators to easily format text, upload images, and embed media directly into blog posts or pages, providing a user-friendly experience for managing site content.
+
+- Comment Moderation:
+
+    - Approve and Delete Comments: The admin panel is equipped with tools to manage user interactions by approving or deleting comments. This functionality ensures that only appropriate and valuable discussions are displayed on the site, maintaining a respectful and engaging community atmosphere.
+
+- Media Management:
+
+    - Attachment Handling: With Django Summernote, administrators can easily add and manage attachments, such as images and videos, directly within the content editor. This feature simplifies the process of enhancing blog posts with rich media, contributing to a more dynamic and visually appealing website.
+
+**Benefits:**
+
+By integrating Django with Summernote, the administrative backend of the website becomes a powerful and intuitive platform for content management. These tools allow for efficient editing, moderation, and media management, ensuring that the website remains fresh, engaging, and well-maintained.
 
 ## Future Developments
+
+Looking ahead, the website will be expanded to include a merchandise application, enabling Josie to sell branded products directly through the site. This exciting new feature will allow fans to purchase items such as "Bus Off" T-shirts, mugs, stickers, and hats.
+
+**Planned Features:**
+
+- Merchandise Store:
+    - Product Listings: The merchandise application will feature a dedicated store page where visitors can browse through a selection of Josie’s branded products. Each product will include high-quality images, detailed descriptions, and pricing information.
+
+    - Shopping Cart and Checkout: Users will be able to add items to a shopping cart and proceed through a secure checkout process. The store will support various payment methods to ensure a smooth and convenient purchasing experience.
+
+    - Inventory Management: The backend will include tools for Josie to manage inventory, track orders, and update product listings easily, ensuring that the store runs efficiently and stays up to date.
 
 ## Testing
 
 **Automated Testing**
 
+In addition to manual testing, I employed Django's automated testing framework to ensure the functionality and reliability of the views and models on the Blog and About pages.
+
+**Testing Approach:**
+
+- Django's Automated Testing:
+    - Views: I wrote and executed automated tests to verify that the views on the Blog and About pages are functioning as expected. These tests ensured that each view correctly renders the appropriate template, handles requests, and returns the expected HTTP status codes.
+
+    - Models: Automated tests were also used to validate the behavior and integrity of the models associated with the Blog and About pages. This included testing model methods, relationships, and field validations to ensure that the data is correctly managed and stored.
+
+**Benefits of Automated Testing:**
+
+    - Efficiency: Automated testing allowed for rapid and repeated testing of key functionalities, ensuring that the core components of the site work correctly after every change or update.
+
+    - Reliability: By using Django's testing framework, I was able to catch and resolve issues early in the development process, reducing the likelihood of bugs or errors making it to the production environment.
+
+    - Consistency: Automated tests provide a consistent way to validate the functionality of the site, helping to maintain the quality of the codebase over time.
+
+**Summary:**
+
+Django's automated testing tools were instrumental in verifying the functionality of the views and models on the Blog and About pages. These tests complemented the manual testing efforts, providing a robust and reliable foundation for the site's ongoing development and maintenance.
+
 **Manual Testing**
 
+To ensure a seamless user experience, I conducted thorough manual testing of the site. This process involved systematically going through each input field and deliberately entering incorrect or unexpected data to observe the outcomes.
+
+**Testing Approach:**
+
+- Input Validation: By testing each form and input field with various types of invalid data, such as incorrect formats, out-of-range values, and missing required fields, I was able to identify and correct any issues that could potentially disrupt the user experience.
+
+- Specific Tests:
+
+    - Videos in Image Folders: Tested scenarios where users might attempt to upload videos in image-only upload fields, ensuring that appropriate error messages are displayed and the upload is prevented.
+
+    - Emails Without Email Format: Entered names or text without email formatting in email input fields to ensure that the site rejects such inputs and prompts the user to provide a valid email address.
+
+    - Blank Name and Email Fields: Checked forms with blank name and email fields to ensure that the site requires these fields to be filled out, providing appropriate prompts for users to enter the necessary information.
+
+- Functionality Testing: I verified that all interactive elements of the site, including submit, edit, and delete buttons, functioned as expected. This included ensuring that:
+
+    - Confirmation Before Irreversible Actions: The site issues clear warnings before any irreversible changes are made, such as deleting content, to prevent accidental data loss.
+
+    - Comment Moderation: Comments do not get posted without approval, ensuring that all user-generated content is moderated before being displayed publicly.
+
+- User Experience: Throughout the testing process, I focused on ensuring that the site remained intuitive and user-friendly, even when users encountered errors. The goal was to make sure that no aspect of the user experience was hindered, and that users were guided in the right direction when issues arose.
+
+**Outcomes and Issues:**
+The manual testing process was crucial in refining the site’s input validation, functionality, and error handling mechanisms, ensuring that users can interact with the site smoothly and without unnecessary interruptions. During testing, I identified a few issues, which are documented in the Bugs Section. These findings were addressed to enhance the overall reliability and usability of the site.
+
 ## Bugs
+
+**Bug: Mixing Class-Based and Function-Based Views**
+I encountered a bug when I mistakenly mixed a class-based view with a function-based view in the same context, leading to confusion and rendering issues. Additionally, I used incorrect syntax in the template by writing `{{% %}}` instead of `{% %}`, which caused further errors. To resolve the issue, I opted for a function-based view and corrected the template syntax, ensuring the data iterated correctly and the page rendered as intended.
+
+**Bug: Image Upload Issues in Media Gallery**
+I encountered an issue when trying to upload images to the media gallery, receiving an error related to a null value in the "image" column: null value in column "image" of relation "media_media" violates not-null constraint. The problem was caused by a default=placeholder setting, which was inappropriate for a gallery meant to display specific images. To resolve the issue, I removed the default=placeholder, allowing the gallery to correctly handle the image uploads
+
+**Bug: Edit Button and Missing JavaScript File**
+I encountered an issue where the edit button was not functioning properly, and the console displayed a `GET http://localhost:8000/static/js/comments.js net::ERR_ABORTED 404 (Not Found)` error. After thoroughly checking the code, I discovered that the `comments.js` file was not stored in the `staticfiles` directory. Once I moved the file to the correct directory, the issue was resolved.
+
+**Automated Test Adjustment**
+While running automated tests on the Blog and About views and forms, I encountered an error in a test case where the expected content didn't match the actual response. Specifically, the test was checking for the message `b'Collaboration request received! I aim to reply within two days'`, but the content differed. To resolve this, I updated the test parameters to match the correct statement, ensuring that the test accurately reflects the expected behavior.
+
+**Image Upload Testing Issue**
+During testing, I discovered that attempting to upload a video instead of an image resulted in an error. To address this, I created a custom form with a function that checks the `content_type` of the file being uploaded, ensuring that only image files are allowed. If a user attempts to upload a non-image file, an error message stating "Only image files are allowed." is displayed. This validation was implemented both in the media gallery and the blog application to ensure consistent and proper file handling across the site.
+
+**Bug: HTML Rendering in Comments**
+During testing, I noticed that HTML tags were being rendered in the Django admin and displayed in the comments on the site, but not when comments were submitted through the form on the site. To resolve this, I used the `safe` filter to clean the content before it is rendered on the blog page, ensuring that HTML is displayed correctly. After struggling to find a solution through various searches, I turned to ChatGPT for assistance. With its help, I was able to work through the code, identify the error, and implement a fix. I believe AI tools like ChatGPT are invaluable for troubleshooting and problem-solving, especially when working solo, as long as they are used as an aid to enhance, not replace, the development process.
 
 ### Validator Testing
 
@@ -263,13 +358,68 @@ The footer serves as a functional and unobtrusive part of the site, providing im
 
  **Javascript Linter**
 
-**lighthouse**
+### Lighthouse
+
+**Home page Desktop**
+
+![image of Lighthouse Home page Desktop ](</readme images/lighthouse-img/Home-desktop.png>)
+
+**Home Page Mobile**
+
+![image of Lighthouse Home Page Mobile ](</readme images/lighthouse-img/Home-mobile.png>)
+
+**Blog Page Desktop**
+
+![image of Lighthouse Blog Page Desktop ](</readme images/lighthouse-img/blog-desktop.png>)
+
+**Blog Page Mobile**
+
+![image of Lighthouse Blog Page Mobile ](</readme images/lighthouse-img/blog-mobile.png>)
+
+**About Page Desktop**
+
+![image of Lighthouse About Page Desktop ](</readme images/lighthouse-img/About-desktop.png>)
+
+**About Page Mobile**
+
+![image of Lighthouse About Page Mobile ](</readme images/lighthouse-img/About-mobile.png>)
+
+**Gallery Desktop**
+
+![image of Lighthouse Gallery Desktop ](</readme images/lighthouse-img/Gallery-descktop.png>)
+
+**Gallery Mobile**
+
+![image of Lighthouse Gallery Mobile ](</readme images/lighthouse-img/Gallery-mobile.png>)
 
 ## Deployment
 
 ## Technologies used
 
+## Sources
+
+Django Media Files - Handling User Uploads in Django Forms & Models-bugbytes (source)
+
+**gallery page html and css:**
+https://demo.tutorialzine.com/2018/03/3-amazing-bootstrap-4-gallery-templates/#cards-gallery by Freebie: Georgi Georgiev.
+
+**html and css sources:**
+codeinstitute code star project.
+
+**media icons**
+font awesome  https://fontawesome.com/
+
 ## Credits
+
+general references 
+David Bowers mentor and og wizard
+stack overflow
+code institute 
+DJANGO doctumentation
+bootstrap documentation
+blasamiq
+GitHub was used to store my repository.
+Google Fonts
 
 **Media**
 All images, videos and animations are own by Josie Rose
