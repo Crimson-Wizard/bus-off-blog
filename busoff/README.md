@@ -351,9 +351,35 @@ During testing, I noticed that HTML tags were being rendered in the Django admin
 
 ## Validator Testing
 
+### HTML
+
+`https://validator.w3.org/`
+All HTML code throughout the project was validated using the W3C Markup Validation Service. The validation process identified a few minor errors on each page, including trailing slashes on void elements, missing `alt` attributes for images, missing `</p>` closing tags, and incorrect width values. These issues were easily corrected, with no major problems to address, ensuring that the HTML code conforms to web standards.
+
+![image of no errors html checker](</readme images/css-html-img/Html-no-errors.png>)
+![image of no errors html checker](</readme images/css-html-img/Html-no-errors.png>)
+
+### CSS
+
+`https://jigsaw.w3.org/css-validator`
+All CSS code was passed through the W3C CSS Validation Service, which confirmed that there were no issues. This validation ensures that the CSS is fully compliant with web standards, contributing to a reliable and consistent user experience across different browsers and devices.
+
+![image of no errors css checker](</readme images/css-html-img/css-no-errors.png>)
+
 ### Python linter
 
+`https://pep8ci.herokuapp.com/`
+I used the Code Institute Python Linter to review all the Python code in the project. The linter identified a few syntax errors, including issues with whitespace, incorrect indentation, and lines that were too long. I corrected these errors to ensure that the code adheres to pep8 best practices and maintains a high standard of readability and consistency.
+
+![image of errors code institue py linter](</readme images/py-linter-img/errors.png>)
+![image of no errors code institue py linter](</readme images/py-linter-img/no-errors.png>)
+
 ### Javascript Linter
+
+`https://jshint.com/`
+All JavaScript code was passed through the JSHint linter, which returned no errors. This confirms that the code is well-structured, adheres to best practices, and is free of syntax issues.
+
+![image of no errors js linter](</readme images/js-linter-img/js-no-errors.png>)
 
 ## Lighthouse
 
@@ -393,32 +419,58 @@ During testing, I noticed that HTML tags were being rendered in the Django admin
 
 ## Technologies used
 
+- Html
+- Css
+- JavaScript
+- Python
+- Bootstrap
+- Django
+- Summernote
+- VS Code Editor
+- Heroku
+- GitHub
+- Gitpod
+
 ## Sources
 
 Django Media Files - Handling User Uploads in Django Forms & Models-bugbytes (source)
 
-**gallery page html and css:**
-`https://demo.tutorialzine.com/2018/03/3-amazing-bootstrap-4-gallery-templates/#cards-gallery` by Freebie: Georgi Georgiev.
+**Html and Css sources:**
 
-**html and css sources:**
-codeinstitute code star project.
+- Codeinstitute code star project. `https://github.com/Code-Institute-Solutions/blog.git` by NeilMc
 
-**media icons**
-font awesome  `https://fontawesome.com/`
+- Gallery
 
-image compressor `https://tinypng.com/`
+  - `https://demo.tutorialzine.com/2018/03/3-amazing-bootstrap-4-gallery-templates/#cards-gallery` by Freebie: Georgi Georgiev.
+
+- Media icons
+
+  - Font awesome:  `https://fontawesome.com/`
+
+- Images
+
+  - Image compressor: `https://tinypng.com/`
+
+  - Cloudinary: `https://cloudinary.com/`
+
+- Fonts
+
+  - Google Fonts: `https://fonts.google.com/`
 
 ## Credits
 
-general references
-David Bowers mentor and og wizard
-stack overflow
-code institute
-DJANGO doctumentation
-bootstrap documentation
-blasamiq
-GitHub was used to store my repository.
-Google Fonts
+- General references**
 
-**Media**
-All images, videos and animations are own by Josie Rose
+  - David Bowers mentor and og wizard
+  - Stack overflow
+  - Code institute
+  - Django doctumentation
+  - Bootstrap documentation
+  - balsamiq
+  - GitHub was used to store my repository.
+  - Heroku
+  - Cloudinary
+
+- Media
+
+  - All images, videos and animations are own by Josie Rose
