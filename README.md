@@ -244,7 +244,7 @@ The footer of the website is designed to provide essential information and quick
 
 The footer serves as a functional and unobtrusive part of the site, providing important information and additional navigation options without detracting from the main content. It ensures that users can always find their way to Josie’s external media sites and that her content is legally protected with appropriate copyright notices.
 
-## Admin
+## Admin Panel
 
 For the administrative side of the website, I utilized Django's robust admin interface, enhanced with Django Summernote, to streamline content management and moderation.
 
@@ -293,11 +293,11 @@ In addition to manual testing, I employed Django's automated testing framework t
 
 **Benefits of Automated Testing:**
 
-    - Efficiency: Automated testing allowed for rapid and repeated testing of key functionalities, ensuring that the core components of the site work correctly after every change or update.
+- Efficiency: Automated testing allowed for rapid and repeated testing of key functionalities, ensuring that the core components of the site work correctly after every change or update.
 
-    - Reliability: By using Django's testing framework, I was able to catch and resolve issues early in the development process, reducing the likelihood of bugs or errors making it to the production environment.
+- Reliability: By using Django's testing framework, I was able to catch and resolve issues early in the development process, reducing the likelihood of bugs or errors making it to the production environment.
 
-    - Consistency: Automated tests provide a consistent way to validate the functionality of the site, helping to maintain the quality of the codebase over time.
+- Consistency: Automated tests provide a consistent way to validate the functionality of the site, helping to maintain the quality of the codebase over time.
 
 **Summary:**
 
@@ -356,7 +356,7 @@ During testing, I noticed that HTML tags were being rendered in the Django admin
 `https://validator.w3.org/`
 All HTML code throughout the project was validated using the W3C Markup Validation Service. The validation process identified a few minor errors on each page, including trailing slashes on void elements, missing `alt` attributes for images, missing `</p>` closing tags, and incorrect width values. These issues were easily corrected, with no major problems to address, ensuring that the HTML code conforms to web standards.
 
-![image of no errors html checker](</readme images/css-html-img/Html-no-errors.png>)
+![image of no errors html checker](</readme images/css-html-img/html-errors.png>)
 ![image of no errors html checker](</readme images/css-html-img/Html-no-errors.png>)
 
 ### CSS
@@ -459,7 +459,7 @@ Django Media Files - Handling User Uploads in Django Forms & Models-bugbytes (so
 
 ## Credits
 
-- General references**
+- General references
 
   - David Bowers mentor and og wizard
   - Stack overflow
