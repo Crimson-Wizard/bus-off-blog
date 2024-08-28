@@ -41,7 +41,7 @@ These considerations were not only central to the initial design but continued t
 
 ![image of initial erd](</readme images/initial-erd.png>)
 
-![image of completed erd](</erd.png>)
+![image of completed erd](</readme images/erd.png>)
 
 ## Agile Development Process
 
@@ -464,6 +464,8 @@ Django Media Files - Handling User Uploads in Django Forms & Models-bugbytes (so
 - Fonts
 
   - Google Fonts: `https://fonts.google.com/`
+
+- ERD image `https://smartdraw.zendesk.com/`
 
 ## Credits
 
