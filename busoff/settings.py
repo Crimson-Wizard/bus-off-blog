@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'about',
     'media',
+    'django_extensions',
 ]
 
 # Site ID for the sites framework
@@ -160,3 +161,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Graphviz Settings
+GRAPH_MODELS ={
+'all_applications': True,
+'graph_models': True,
+}

@@ -37,6 +37,12 @@ These considerations were not only central to the initial design but continued t
 ![image of about me  page](</readme images/about-me-page.png>)
 ![image of gallery page](</readme images/gallery-page.png>)
 
+## ERD
+
+![image of initial erd](</readme images/initial-erd.png>)
+
+![image of completed erd](</erd.png>)
+
 ## Agile Development Process
 
 In order to ensure a structured and efficient workflow, I followed an Agile development process throughout the project. This approach allowed me to break down the project into manageable stages and iteratively develop each component, ensuring continuous improvement and flexibility.
