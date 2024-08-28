@@ -14,6 +14,8 @@ This website serves as Josie’s digital home, a hub where her followers can imm
 
 [Deployed site](https://buss-off-blog-32e7b4f88cfc.herokuapp.com/)
 
+[GitHub Repository](https://github.com/Crimson-Wizard/bus-off-blog.git)
+
 ## Design Philosophy and Wireframe Development
 
 During the planning phase of this project, the primary focus was on creating a design that was simple, user-friendly, and feminine. These keywords guided every decision made throughout the design process. The wireframes were meticulously crafted as a reference point to ensure that these principles were consistently applied.
