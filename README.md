@@ -39,7 +39,11 @@ These considerations were not only central to the initial design but continued t
 
 ## ERD
 
+This is the initial Entity-Relationship Diagram (ERD) for the project. It’s a foundational representation that outlines the layout of the data tables. While still basic, this diagram provides a clear starting point for understanding the structure and relationships within the database, setting the stage for further development and refinement.
+
 ![image of initial erd](</readme images/initial-erd.png>)
+
+This is the advanced version of the Entity-Relationship Diagram (ERD) for the project. Unlike the initial basic layout, this comprehensive diagram illustrates the complete and intricate structure of the data tables and their relationships. It includes detailed attributes, keys, and constraints, providing a thorough overview of the database schema. This refined ERD reflects the finalized design and is crucial for understanding the full scope of the database's architecture.
 
 ![image of completed erd](</readme images/erd.png>)
 
@@ -336,6 +340,107 @@ To ensure a seamless user experience, I conducted thorough manual testing of the
 
 **Outcomes and Issues:**
 The manual testing process was crucial in refining the site’s input validation, functionality, and error handling mechanisms, ensuring that users can interact with the site smoothly and without unnecessary interruptions. During testing, I identified a few issues, which are documented in the Bugs Section. These findings were addressed to enhance the overall reliability and usability of the site.
+
+## Testing My User Stories
+
+### View paginated list of posts
+
+As a site user, I can view a paginated list of posts so that I can select which post I want to view.
+
+AC1 - "Given more than one post in the database, these multiple posts are listed."
+
+- Perform the Test: Access the part of the application where posts are listed.
+Verify that all the posts added to the database are displayed.
+
+AC2 - "When a user opens the main page a list of posts is seen."
+
+- Perform the Test: Open the main page of the application in a web browser or testing tool.
+
+AC3 - "Then the user sees all post titles with pagination to choose what to read."
+
+- Perform the Test: Access the main page and look at the list of posts.
+Check that each post title is displayed. Verify that pagination controls Next/Previous are present and functional.
+
+### Open a post
+
+As a Site User, I can click on a post so that I can read the full text.
+
+AC1 When a blog post title is clicked on a detailed view of the post is seen.
+
+- Perform the Test: Navigate to the Blog Post List: Open the main page or the page where the list of blog posts is displayed. Identify a post title from the list and click on it. Check that the page navigates to or opens a detailed view of the selected blog post. Ensure that the detailed view displays the full text of the post, along with any additional content such as images.
+
+### View comments
+
+As a Site User / Admin I can view comments on an individual post so that I can read the conversation
+
+AC1 Given one or more user comments the admin can view them.
+
+- Perform the Test: As an admin, navigate to the post with comments.
+Ensure that all comments are visible and properly displayed unless comment is awaiting approval, including the text and any relevant details.
+
+AC2 Then a site user can click on the comment thread to read the conversation.
+
+- Perform the Test: As a site user, go to the post with comments.
+Click on the comment thread or a relevant link to expand it.
+Verify that the full conversation is visible and properly displayed.
+
+### Account registration
+
+As a Site User I can register an account so that I can comment on a post.
+
+AC1 Given an email a user can register an account.
+
+- Perform the Test: Go to the registration page. Enter a valid email address along with any required information (like username, password, etc.). Submit the registration form. Verify that the user receives a confirmation message "Successfully signed in as (name)".
+
+AC2 Then the user can log in.
+
+- Perform the Test: Go to the login page. Enter the credentials (email and password) used during registration.
+Submit the login form. Verify that the user can log in and is redirected to the appropriate page.
+
+AC3 When the user is logged in they can comment.
+
+- Perform the Test: While logged in, navigate to a post where comments are allowed. Enter a comment in the comment form. Submit the comment. Verify that the comment is successfully and awaiting approval.
+
+### Modify or delete comment on a post
+
+As a Site User I can modify or delete my comment on a post so that I can be involved in the conversation
+
+AC1 Given a logged in user, they can modify their comment
+
+- Perform the Test: Log in as a user with an existing comment. Navigate to the post with the comment. Find the comment to modify. Click on the option to edit the comment. Make changes to the comment and submit the modifications.
+Verify that the comment is updated correctly, displays the new content and is awaiting approval.
+
+AC2 Given a logged in user, they can delete their comment
+
+- Perform the Test: Log in as a user with an existing comment. Navigate to the post with the comment. Find the comment to delete. Click on the option to delete the comment. Confirm the deletion when prompted. Verify that the comment is removed from the post and no longer visible.
+
+As a Site Admin I can create draft posts so that I can finish writing the content later
+
+### Create drafts
+
+AC1 Given a logged in user, they can save a draft blog post
+
+- Perform the Test: Log in as a user with admin privileges.
+Navigate to the blog post creation or editing page.
+Enter content for a new blog post.
+Save the post as a draft in the status option.
+Verify that the draft is saved successfully, typically by checking a draft folder or list.
+
+AC2 Then they can finish the content at a later time
+
+- Perform the Test:
+
+### Approve comments
+
+As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
+
+AC1 Given a logged in user, they can approve a comment
+
+- Perform the Test:
+
+AC2 Given a logged in user, they can disapprove a comment
+
+- Perform the Test:
 
 ## Bugs
 

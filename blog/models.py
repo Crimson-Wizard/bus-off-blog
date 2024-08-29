@@ -52,10 +52,17 @@ class PostForm(forms.ModelForm):
             The cleaned data for the featured_image field if valid.
         """
         featured_image = self.cleaned_data.get('featured_image')
+        
+        placeholder_image_url = 'https://res.cloudinary.com/dx4vjg39s/image/upload/v1724866922/pondering_marqxn.jpg'
 
         if featured_image:
             if not featured_image.content_type.startswith('image/'):
                 raise forms.ValidationError("Only image files are allowed.")
+        
+        else:
+        # No image uploaded, use the placeholder image URL
+        # Set the placeholder URL or flag here if needed
+            return placeholder_image_url
         
         return featured_image
 
