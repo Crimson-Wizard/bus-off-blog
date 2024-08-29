@@ -41,30 +41,36 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = '__all__'
 
-    def clean_featured_image(self):
-        """
-        Validates that the uploaded file for the featured_image field is an image.
-        
-        Raises:
-            forms.ValidationError: If the uploaded file is not an image.
-        
-        Returns:
-            The cleaned data for the featured_image field if valid.
-        """
-        featured_image = self.cleaned_data.get('featured_image')
-        
-        placeholder_image_url = 'https://res.cloudinary.com/dx4vjg39s/image/upload/v1724866922/pondering_marqxn.jpg'
+def clean_featured_image(self):
+    """
+    Validates that the uploaded file for the featured_image field is an image.
+    If no image is uploaded, it sets a placeholder image URL.
+    
+    Raises:
+        forms.ValidationError: If the uploaded file is not an image.
+    
+    Returns:
+        The cleaned data for the featured_image field if valid, or the placeholder image URL.
+    """
+    featured_image = self.cleaned_data.get('featured_image')
 
-        if featured_image:
-            if not featured_image.content_type.startswith('image/'):
-                raise forms.ValidationError("Only image files are allowed.")
-        
-        else:
-        # No image uploaded, use the placeholder image URL
-        # Set the placeholder URL or flag here if needed
+    # URL of the placeholder image
+    placeholder_image_url = 'https://res.cloudinary.com/dx4vjg39s/image/upload/v1724866922/pondering_marqxn.jpg'
+
+    if isinstance(featured_image, str):
+        # If featured_image is a string (e.g., URL or path), we assume it's valid
+        if "placeholder" in featured_image:
             return placeholder_image_url
-        
         return featured_image
+    
+    if featured_image:
+        if not featured_image.content_type.startswith('image/'):
+            raise forms.ValidationError("Only image files are allowed.")
+    else:
+        # No image uploaded, use the placeholder image URL
+        return placeholder_image_url
+
+    return featured_image
 
 
 class Comment(models.Model):
