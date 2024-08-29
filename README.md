@@ -420,15 +420,12 @@ As a Site Admin I can create draft posts so that I can finish writing the conten
 
 AC1 Given a logged in user, they can save a draft blog post
 
-- Perform the Test: Log in as a user with admin privileges.
-Navigate to the blog post creation or editing page.
-Enter content for a new blog post.
-Save the post as a draft in the status option.
-Verify that the draft is saved successfully, typically by checking a draft folder or list.
+- Perform the Test: Log in as a user with admin privileges. Navigate to the blog post creation or editing page. Enter content for a new blog post. Save the post as a draft in the status option.
+Verify that the draft is saved successfully, by checking list if status is published or draft.
 
 AC2 Then they can finish the content at a later time
 
-- Perform the Test:
+- Perform the Test: Log in as the same user who saved the draft. Navigate to the drafts section or the list of saved posts. Open the draft post that was previously saved. Complete or edit the content as needed. Save the changes or publish the post when ready. Verify that the changes are saved correctly and that you can continue editing the draft as needed.
 
 ### Approve comments
 
@@ -436,11 +433,106 @@ As a Site Admin I can approve or disapprove comments so that I can filter out ob
 
 AC1 Given a logged in user, they can approve a comment
 
-- Perform the Test:
+- Perform the Test: Log in as a user with admin privileges. Navigate to the section of the site where comments are awaiting approval. Find a comment that is pending approval. Click the option to approve the comment. Verify that the comment is moved to the approved status and is visible on the relevant post or comment section.
 
 AC2 Given a logged in user, they can disapprove a comment
 
-- Perform the Test:
+- Perform the Test: Log in as a user with admin privileges. Navigate to the comments awaiting approval. Find the comment you want to disapprove. Click the option to delete the comment. Verify that the comment is deleted and is no longer visible on the site and is removed from the moderation queue.
+
+### Read about the site
+
+As a Site User, I can click on the About link so that I can read about the site.
+
+AC1 When the About link is clicked, the about text is visible.
+
+- Perform the Test: Navigate to the main page of the site. Locate and click on the About link in the navigation menu. Verify that the About page opens and displays the content describing about Josie. Check that the about text is clearly visible and readable.
+
+### Add and update the about text
+
+As a Site Admin, I can create or update the about page content so that it is available on the site.
+
+AC1 The About app is visible in the admin panel.
+
+- Perform the Test: Log in to the site with admin privileges. Navigate to the admin panel. Look for a about section content management. Verify that there is an app labeled "About" allows you to manage the About page content. Ensure that you can access this app and that it provides functionality to create or update the About page content.
+
+### Create image admin upload
+
+As an admin I can log into the admin page so that i can add images
+
+AC-1 see the media app in admin
+
+- Perform the Test: Log in to the site with admin privileges. Navigate to the admin panel. Look for the media section.Verify that the media app is visible and accessible. Ensure that you can open this app to manage and add image to gallery.
+
+### visit the images page
+
+As a user I can select the media nav so that view the media page
+
+Ac-1 when the media link is clicked you are taken to the media page
+
+- Perform the Test: Log in as a site user. Navigate to the site’s main navigation menu or dashboard.
+Find and click on the media navigation menu item. Verify that clicking the link takes you to the media page where you can view media content.
+
+### upload image successfully
+
+As a admin I can upload image so that see it displayed with correct css styling on the website
+
+Ac-1 be able to upload image
+
+- Perform the Test: Log in as an admin. Navigate to the admin panel management section. Locate the option to upload images. Select an image file from your computer and complete the upload process. Verify that the image is successfully uploaded and listed in the media library.
+
+Ac-2 view image on website with correct html and css styling
+
+- Perform the Test: Ensure the uploaded image is included in a relevant page or post on the website. Navigate to the page where the image should be displayed. Verify that the image appears on the page. Check that the image is styled correctly according to the website’s CSS and html following the gallery format.
+
+### add image to blog list
+
+As a admin I can add image to blog so that the blog has a unique image
+
+Ac-1 add image fields to the blog post
+
+- Perform the Test: Log in as an admin. Navigate to the post creation in the admin panel. Ensure there is an option to add or upload an image. Verify that you can upload or select an image for the blog post, in no image is selected a placeholder image has been used in its place.
+
+### image live site issue 
+
+As a admin I can upload an image to the live site so that it can be displayed in the image gallery.
+
+AC-1: The image upload field correctly stores static files, and the uploaded images are visible on the live site in the image gallery.
+
+Initially, there was a bug with the image display due to issues with static file storage on the live site. To resolve this, I switched to using Cloudinary for image storage and updated the code to fetch and display images from Cloudinary. Verify that the uploaded images are now correctly stored in Cloudinary and visible in the image gallery and blog posts on the live site.
+
+### site user request collaboration
+
+As a Potential Collaborator I can fill in a contact form so that I can submit a request for collaboration.
+
+ac-1 form to submit with email, name and information on request
+
+Perform the Test: Go to the page or section of the site where the contact form for collaboration "work with me" is located. Enter an email address in the designated email field.
+Provide a name in the appropriate field.
+Enter the details of a collaboration idea request in the information field.
+Click the "Submit" button to send the form.
+Ensure that the form submission process completes without errors.
+Confirm that the request is properly recorded and can be viewed in the admin panel.
+
+### site owner see collab requests
+
+As a Site Owner I can store collaboration requests in the database so that I can review them later.
+
+AC-1: I can view all collaboration requests in one centralized location, making it easy to manage and review them.
+
+Perform the Test: Submit several collaboration requests through the contact form. Log in as the site admin. Navigate to the section of the admin panel where collaboration requests are stored. Verify that all requests are displayed in this section. Ensure that you can easily review details such as the requester's email, name, and request information.
+
+### process collaboration requests
+
+As a Site Owner I can mark collaboration requests as "read" so that I can easily track how many requests I still need to process.
+
+AC-1: There is a single location where I can view and work through all collaboration requests, with the ability to mark them as "read" to keep track of what has been processed.
+
+Perform the Test: Submit several collaboration requests through the contact form. Log in as the site owner.
+Navigate to the section in the admin panel where collaboration requests are managed. Verify that all requests are listed in this location. Mark some requests as "read."
+Ensure that the marked requests are visually indicated as "read" and that you can easily distinguish between "read" and "unread" requests.
+Confirm that the system allows you to track and manage the status of each request effectively.
+
+Perform the Test:
 
 ## Bugs
 
