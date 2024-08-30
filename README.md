@@ -350,16 +350,16 @@ As a site user, I can view a paginated list of posts so that I can select which 
 AC1 - "Given more than one post in the database, these multiple posts are listed."
 
 - Perform the Test: Access the part of the application where posts are listed.
-Verify that all the posts added to the database are displayed.
+Then i verified that all the posts added to the database are displayed.
 
 AC2 - "When a user opens the main page a list of posts is seen."
 
-- Perform the Test: Open the main page of the application in a web browser or testing tool.
+- Perform the Test: Open the main page of the application in a web browser.
 
 AC3 - "Then the user sees all post titles with pagination to choose what to read."
 
 - Perform the Test: Access the main page and look at the list of posts.
-Check that each post title is displayed. Verify that pagination controls Next/Previous are present and functional.
+Checked that each post title is displayed. Verified that pagination controls Next/Previous are present and functional.
 
 ### Open a post
 
@@ -367,7 +367,7 @@ As a Site User, I can click on a post so that I can read the full text.
 
 AC1 When a blog post title is clicked on a detailed view of the post is seen.
 
-- Perform the Test: Navigate to the Blog Post List: Open the main page or the page where the list of blog posts is displayed. Identify a post title from the list and click on it. Check that the page navigates to or opens a detailed view of the selected blog post. Ensure that the detailed view displays the full text of the post, along with any additional content such as images.
+- Perform the Test: Navigate to the Blog Post List: Open the main page where the list of blog posts is displayed. Identify a post title from the list and click on it. Check that the page opens a detailed view of the selected blog post. Checked that the detailed view displays the full text of the post, along with any additional content such as images. Checked for multiple post to ensure each post is displayed.
 
 ### View comments
 
@@ -381,8 +381,7 @@ Ensure that all comments are visible and properly displayed unless comment is aw
 AC2 Then a site user can click on the comment thread to read the conversation.
 
 - Perform the Test: As a site user, go to the post with comments.
-Click on the comment thread or a relevant link to expand it.
-Verify that the full conversation is visible and properly displayed.
+Scroll down on the comment thread to see all comments. Verified that the full conversation is visible and properly displayed.
 
 ### Account registration
 
@@ -390,16 +389,16 @@ As a Site User I can register an account so that I can comment on a post.
 
 AC1 Given an email a user can register an account.
 
-- Perform the Test: Go to the registration page. Enter a valid email address along with any required information (like username, password, etc.). Submit the registration form. Verify that the user receives a confirmation message "Successfully signed in as (name)".
+- Perform the Test: Go to the registration page. Enter a valid email address along with any required information like username, password. Submit the registration form. Verified that the user receives a confirmation message "Successfully signed in as (name)". Checked each field left blank to make sure you are prompted to fill required fields  such as name and password (prompt please fill in this field). If password doesn't match registration is not complete. Check that password can not be similar to username or registration is not complete. Checked that password must contain at least 8 characters, can’t be a commonly used password and can’t be entirely numeric.
 
 AC2 Then the user can log in.
 
 - Perform the Test: Go to the login page. Enter the credentials (email and password) used during registration.
-Submit the login form. Verify that the user can log in and is redirected to the appropriate page.
+Submit the login form. Verify that the user is logged in and is redirected to the appropriate page. Checked if username is not filled in correctly prompt "The username and/or password you specified are not correct" will be displayed. Checked if password does not match username prompt "The username and/or password you specified are not correct" will be displayed.
 
 AC3 When the user is logged in they can comment.
 
-- Perform the Test: While logged in, navigate to a post where comments are allowed. Enter a comment in the comment form. Submit the comment. Verify that the comment is successfully and awaiting approval.
+- Perform the Test: While logged in, navigate to a post where comments are allowed. Entered a comment in the comment form. Submit the comment. Verified that the comment is successfull and awaiting approval. Checked that form can not be submitted without text in body field or will be prompted "please fill in thi field"
 
 ### Modify or delete comment on a post
 
@@ -407,12 +406,12 @@ As a Site User I can modify or delete my comment on a post so that I can be invo
 
 AC1 Given a logged in user, they can modify their comment
 
-- Perform the Test: Log in as a user with an existing comment. Navigate to the post with the comment. Find the comment to modify. Click on the option to edit the comment. Make changes to the comment and submit the modifications.
+- Perform the Test: Logged in as a user with an existing comment. Navigated to the post with the comment. Found the comment to modify. Clicked on the option to edit the comment. Make changes to the comment and submit the modifications.
 Verify that the comment is updated correctly, displays the new content and is awaiting approval.
 
 AC2 Given a logged in user, they can delete their comment
 
-- Perform the Test: Log in as a user with an existing comment. Navigate to the post with the comment. Find the comment to delete. Click on the option to delete the comment. Confirm the deletion when prompted. Verify that the comment is removed from the post and no longer visible.
+- Perform the Test: Logged in as a user with an existing comment. Navigated to the post with the comment. Found the comment to delete. Clicked on the option to delete the comment. Confirmed the deletion when prompted. Verified that the comment is removed from the post and no longer visible.
 
 As a Site Admin I can create draft posts so that I can finish writing the content later
 
@@ -420,12 +419,11 @@ As a Site Admin I can create draft posts so that I can finish writing the conten
 
 AC1 Given a logged in user, they can save a draft blog post
 
-- Perform the Test: Log in as a user with admin privileges. Navigate to the blog post creation or editing page. Enter content for a new blog post. Save the post as a draft in the status option.
-Verify that the draft is saved successfully, by checking list if status is published or draft.
+- Perform the Test: Logged in as a user with admin privileges. Navigated to the blog post creation/editing page. Entered content for a new blog post. Saved the post as a draft in the status option. Verified that the draft is saved successfully by checking list if status is published or draft.
 
 AC2 Then they can finish the content at a later time
 
-- Perform the Test: Log in as the same user who saved the draft. Navigate to the drafts section or the list of saved posts. Open the draft post that was previously saved. Complete or edit the content as needed. Save the changes or publish the post when ready. Verify that the changes are saved correctly and that you can continue editing the draft as needed.
+- Perform the Test: Log in as the same user who saved the draft. Navigate to the list of saved posts. Open the draft post that was previously saved. Edited the content and saved the changes. Verified that the changes are saved correctly and that you can continue editing the draft as needed.
 
 ### Approve comments
 
@@ -433,11 +431,11 @@ As a Site Admin I can approve or disapprove comments so that I can filter out ob
 
 AC1 Given a logged in user, they can approve a comment
 
-- Perform the Test: Log in as a user with admin privileges. Navigate to the section of the site where comments are awaiting approval. Find a comment that is pending approval. Click the option to approve the comment. Verify that the comment is moved to the approved status and is visible on the relevant post or comment section.
+- Perform the Test: Logged in as a user with admin privileges. Navigated to the section of the site where comments are awaiting approval. Find a comment that is pending approval. Click the option to approve the comment. Verified that the comment is moved to the approved status and is visible on the relevant post or comment section.
 
 AC2 Given a logged in user, they can disapprove a comment
 
-- Perform the Test: Log in as a user with admin privileges. Navigate to the comments awaiting approval. Find the comment you want to disapprove. Click the option to delete the comment. Verify that the comment is deleted and is no longer visible on the site and is removed from the moderation queue.
+- Perform the Test: Logged in as a user with admin privileges. Navigated to the comments awaiting approval. Find the comment to disapprove. Click the option to delete the comment. Verify that the comment is deleted and is no longer visible on the site and is removed from the moderation queue.
 
 ### Read about the site
 
@@ -445,7 +443,7 @@ As a Site User, I can click on the About link so that I can read about the site.
 
 AC1 When the About link is clicked, the about text is visible.
 
-- Perform the Test: Navigate to the main page of the site. Locate and click on the About link in the navigation menu. Verify that the About page opens and displays the content describing about Josie. Check that the about text is clearly visible and readable.
+- Perform the Test: Navigated to the main page of the site. Locate and click on the About link in the navigation menu. Verify that the About page opens and displays the content describing about Josie. Checked that the about text is clearly visible and readable.
 
 ### Add and update the about text
 
@@ -453,7 +451,7 @@ As a Site Admin, I can create or update the about page content so that it is ava
 
 AC1 The About app is visible in the admin panel.
 
-- Perform the Test: Log in to the site with admin privileges. Navigate to the admin panel. Look for a about section content management. Verify that there is an app labeled "About" allows you to manage the About page content. Ensure that you can access this app and that it provides functionality to create or update the About page content.
+- Perform the Test: Logged in to the site with admin privileges. Navigated to the admin panel. Looked for the about section content management. Verified that there is an app labeled "About" allows you to manage the About page content. Ensured that you can access this app and that it provides functionality to create or update the About page content.
 
 ### Create image admin upload
 
@@ -461,38 +459,37 @@ As an admin I can log into the admin page so that i can add images
 
 AC-1 see the media app in admin
 
-- Perform the Test: Log in to the site with admin privileges. Navigate to the admin panel. Look for the media section.Verify that the media app is visible and accessible. Ensure that you can open this app to manage and add image to gallery.
+- Perform the Test: Logged in to the site with admin privileges. Navigated to the admin panel. Looked for the media section. Verified that the media app is visible and accessible. Ensured that you can open this app to manage and add images to gallery.
 
-### visit the images page
+### Visit the images page
 
 As a user I can select the media nav so that view the media page
 
 Ac-1 when the media link is clicked you are taken to the media page
 
-- Perform the Test: Log in as a site user. Navigate to the site’s main navigation menu or dashboard.
-Find and click on the media navigation menu item. Verify that clicking the link takes you to the media page where you can view media content.
+- Perform the Test: Logged in as a site user. Navigated to the site’s main navigation menu. Find and click on the gallery section. Verify that clicking the link takes you to the gallery media page where you can view media content.
 
-### upload image successfully
+### Upload image successfully
 
 As a admin I can upload image so that see it displayed with correct css styling on the website
 
 Ac-1 be able to upload image
 
-- Perform the Test: Log in as an admin. Navigate to the admin panel management section. Locate the option to upload images. Select an image file from your computer and complete the upload process. Verify that the image is successfully uploaded and listed in the media library.
+- Perform the Test: Logged in as an admin. Navigated to the media management section. Located the option to upload images. Select an image file from my computer and completed the upload process. Verified that the image is successfully uploaded and listed in the media library. Checked that Title field must be completed if not a "This field is required" prompt will be displayed. Check that image field must be completed, if not a "no file selecte" prompt will be displayed.
 
 Ac-2 view image on website with correct html and css styling
 
-- Perform the Test: Ensure the uploaded image is included in a relevant page or post on the website. Navigate to the page where the image should be displayed. Verify that the image appears on the page. Check that the image is styled correctly according to the website’s CSS and html following the gallery format.
+- Perform the Test: Ensured that the uploaded image is included in the gallery section on the website. Verified that the image appears on the page. Checked that the image is styled correctly according to the website’s CSS and html following the gallery format and that the image expands when clicked and reduces when selected.
 
-### add image to blog list
+### Add image to blog list
 
 As a admin I can add image to blog so that the blog has a unique image
 
 Ac-1 add image fields to the blog post
 
-- Perform the Test: Log in as an admin. Navigate to the post creation in the admin panel. Ensure there is an option to add or upload an image. Verify that you can upload or select an image for the blog post, in no image is selected a placeholder image has been used in its place.
+- Perform the Test: Logged in as an admin. Navigated to the post creation in the admin panel. Ensured there is an option to add or upload an image. Verify that you can upload or select an image for the blog post, if no image is selected a placeholder image has been used in its place.
 
-### image live site issue 
+### Image live site issue
 
 As a admin I can upload an image to the live site so that it can be displayed in the image gallery.
 
@@ -500,39 +497,31 @@ AC-1: The image upload field correctly stores static files, and the uploaded ima
 
 Initially, there was a bug with the image display due to issues with static file storage on the live site. To resolve this, I switched to using Cloudinary for image storage and updated the code to fetch and display images from Cloudinary. Verify that the uploaded images are now correctly stored in Cloudinary and visible in the image gallery and blog posts on the live site.
 
-### site user request collaboration
+### Site user request collaboration
 
 As a Potential Collaborator I can fill in a contact form so that I can submit a request for collaboration.
 
-ac-1 form to submit with email, name and information on request
+AC-1 form to submit with email, name and information on request
 
-Perform the Test: Go to the page or section of the site where the contact form for collaboration "work with me" is located. Enter an email address in the designated email field.
-Provide a name in the appropriate field.
-Enter the details of a collaboration idea request in the information field.
-Click the "Submit" button to send the form.
-Ensure that the form submission process completes without errors.
-Confirm that the request is properly recorded and can be viewed in the admin panel.
+Perform the Test: Go to the About page of the site where the contact form for collaboration "work with me" is located Entered an email address in the designated email field. Provided a name in the appropriate field.
+Entered the details of a collaboration idea request in the information field. Clicked the "Submit" button to send the form. Ensured that the form submission process completes without errors. Confirmed that the request is properly recorded and can be viewed in the admin panel. Checked that all fields must be completed to submit form, if not "Please fill in this field" prompt will be displayed. Checked that you cannot submit the form even if any one or two fields are not completed.
 
-### site owner see collab requests
+### Site owner see collab requests
 
 As a Site Owner I can store collaboration requests in the database so that I can review them later.
 
 AC-1: I can view all collaboration requests in one centralized location, making it easy to manage and review them.
 
-Perform the Test: Submit several collaboration requests through the contact form. Log in as the site admin. Navigate to the section of the admin panel where collaboration requests are stored. Verify that all requests are displayed in this section. Ensure that you can easily review details such as the requester's email, name, and request information.
+Perform the Test: Submited several collaboration requests through the contact form. Logged in as the site admin. Navigated to the section of the admin panel where collaboration requests are stored. Verified that all requests are displayed in this section. Ensured that you can easily review details such as the requester's email, name, and request information.
 
-### process collaboration requests
+### Process collaboration requests
 
 As a Site Owner I can mark collaboration requests as "read" so that I can easily track how many requests I still need to process.
 
 AC-1: There is a single location where I can view and work through all collaboration requests, with the ability to mark them as "read" to keep track of what has been processed.
 
-Perform the Test: Submit several collaboration requests through the contact form. Log in as the site owner.
-Navigate to the section in the admin panel where collaboration requests are managed. Verify that all requests are listed in this location. Mark some requests as "read."
-Ensure that the marked requests are visually indicated as "read" and that you can easily distinguish between "read" and "unread" requests.
-Confirm that the system allows you to track and manage the status of each request effectively.
-
-Perform the Test:
+Perform the Test: Submited several collaboration requests through the contact form. Logged in as the site admin.
+Navigated to the section in the admin panel where collaboration requests are managed. Verified that all requests are listed in this location. Marked some requests as "read." Ensured that the marked requests are visually indicated as "read" and they are easily distinguish between "read" and "unread" requests.
 
 ## Bugs
 
