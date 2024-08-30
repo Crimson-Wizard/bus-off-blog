@@ -49,10 +49,12 @@ This is the advanced version of the Entity-Relationship Diagram (ERD) for the pr
 
 ## Agile Development Process
 
-In order to ensure a structured and efficient workflow, I followed an Agile development process throughout the project. This approach allowed me to break down the project into manageable stages and iteratively develop each component, ensuring continuous improvement and flexibility.
+To ensure a structured and efficient workflow, I employed an Agile development methodology throughout the project. This approach enabled me to decompose the project into manageable stages and iteratively develop each component, allowing for continuous improvement and adaptability.
 
 **User Stories and Planning**
 To plan each stage of the project, I utilized GitHub's project management tools to create and track user stories. These user stories provided a clear and concise way to define the requirements and goals for each feature and task within the project. By focusing on user-centric stories, I was able to prioritize functionality that delivers the most value to users.
+
+- Epic Story: To link a section of tasks to one overall task, I defined an Epic that encompassed the broader objective. This Epic served as a central point to organize and manage related tasks, ensuring that all activities contributed towards achieving the overarching goal.
 
 - User Stories: Each user story represented a specific feature or task that needed to be implemented. This helped in organizing the work into clear objectives that could be easily tracked and managed.
 
@@ -389,7 +391,7 @@ As a Site User I can register an account so that I can comment on a post.
 
 AC1 Given an email a user can register an account.
 
-- Perform the Test: Go to the registration page. Enter a valid email address along with any required information like username, password. Submit the registration form. Verified that the user receives a confirmation message "Successfully signed in as (name)". Checked each field left blank to make sure you are prompted to fill required fields  such as name and password (prompt please fill in this field). If password doesn't match registration is not complete. Check that password can not be similar to username or registration is not complete. Checked that password must contain at least 8 characters, can’t be a commonly used password and can’t be entirely numeric.
+- Perform the Test: Go to the registration page. Entered a valid email address along with any required information like username, password. Submitted the registration form. Verified that the user receives a confirmation message "Successfully signed in as (name)". Checked each field left blank to make sure you are prompted to fill required fields  such as name and password (prompt please fill in this field). If password doesn't match registration is not complete. Check that password can not be similar to username or registration is not complete. Checked that password must contain at least 8 characters, can’t be a commonly used password and can’t be entirely numeric.
 
 AC2 Then the user can log in.
 
@@ -412,8 +414,6 @@ Verify that the comment is updated correctly, displays the new content and is aw
 AC2 Given a logged in user, they can delete their comment
 
 - Perform the Test: Logged in as a user with an existing comment. Navigated to the post with the comment. Found the comment to delete. Clicked on the option to delete the comment. Confirmed the deletion when prompted. Verified that the comment is removed from the post and no longer visible.
-
-As a Site Admin I can create draft posts so that I can finish writing the content later
 
 ### Create drafts
 
@@ -579,11 +579,11 @@ All JavaScript code was passed through the JSHint linter, which returned no erro
 
 ### Home page Desktop
 
-![image of Lighthouse Home page Desktop ](</readme images/lighthouse-img/Home-desktop.png>)
+![image of Lighthouse Home page Desktop ](</readme images/lighthouse-img/home-desktop.png>)
 
 ### Home Page Mobile
 
-![image of Lighthouse Home Page Mobile ](</readme images/lighthouse-img/Home-mobile.png>)
+![image of Lighthouse Home Page Mobile ](</readme images/lighthouse-img/home-mobile.png>)
 
 ### Blog Page Desktop
 
@@ -595,21 +595,40 @@ All JavaScript code was passed through the JSHint linter, which returned no erro
 
 ### About Page Desktop
 
-![image of Lighthouse About Page Desktop ](</readme images/lighthouse-img/About-desktop.png>)
+![image of Lighthouse About Page Desktop ](</readme images/lighthouse-img/about-desktop.png>)
 
 ### About Page Mobile
 
-![image of Lighthouse About Page Mobile ](</readme images/lighthouse-img/About-mobile.png>)
+![image of Lighthouse About Page Mobile ](</readme images/lighthouse-img/about-mobile.png>)
 
 ### Gallery Desktop
 
-![image of Lighthouse Gallery Desktop ](</readme images/lighthouse-img/Gallery-descktop.png>)
+![image of Lighthouse Gallery Desktop ](</readme images/lighthouse-img/gallery-desktop.png>)
 
 ### Gallery Mobile
 
-![image of Lighthouse Gallery Mobile ](</readme images/lighthouse-img/Gallery-mobile.png>)
+![image of Lighthouse Gallery Mobile ](</readme images/lighthouse-img/gallery-mobile.png>)
 
 ## Deployment
+
+The live version of my site was deployed using Heroku. The deployment process involved the following steps:
+
+- Connecting GitHub Repository:
+
+  - I linked my GitHub repository for the "Bus Off Blog" to Heroku, ensuring that Heroku could access the latest codebase.
+
+- Configuring Environment Variables:
+
+  - In Heroku’s settings, I configured the environment variables (Config Vars) necessary for the application to function. This included:
+    - Cloudinary: For managing and serving images.
+    - PostgreSQL Database: For managing the site's data.
+    - Secret Key: To secure the application and ensure secure communication between Heroku and the data sources.
+
+- Manual Deployment:
+
+  - I selected the option to manually deploy the application from the main branch of my GitHub repository. This step ensured that the most recent changes were deployed to the live site.
+
+By following these steps, I successfully set up and deployed the live version of the site on Heroku, ensuring that it is connected to the necessary services and configured correctly.
 
 ## Technologies used
 
